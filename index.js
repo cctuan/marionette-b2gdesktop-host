@@ -90,7 +90,11 @@ Host.prototype = {
 
     function run(err) {
       if (err) return callback(err);
-      mozrunner.run('b2g', target, { profile: profile }, saveState);
+      mozrunner.run('b2g',
+        target,
+        { profile: profile,
+          pref: options.pref },
+        saveState);
     }
 
     function saveState(err, process) {
